@@ -22,7 +22,9 @@
   "scripts": {
     "start": "vite serve",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src/**/**/*.{jsx,js} && stylelint src/**/**/*.css",
+    "lint:fix": "eslint --fix src/**/**/*.{jsx,js} && stylelint --fix src/**/**/*.css"
   },
   "repository": {
     "type": "git",
