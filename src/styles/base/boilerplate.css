@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Vela Sans";
+  font-style: none;
+  font-weight: 400 900;
+  src: url("/fonts/VelaSans.ttf") format("truetype");
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 75%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: var(--fs-vela-sans);
+}

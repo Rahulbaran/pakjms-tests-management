@@ -1,0 +1,19 @@
+:root {
+  --base-fs: 1rem;
+  --base-padding: 0.5em;
+  --base-margin: 0.5em;
+  --base-br: 20px;
+  --base-gap: 0.5rem;
+  --base-lh: 1.5;
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: calc(var(--fw-regular, 400) + 100);
+  --fw-semi: calc(var(--fw-medium, 500) + 100);
+  --fw-bold: calc(var(--fw-semi, 600) + 100);
+  --fw-xbold: calc(var(--fw-bold, 700) + 100);
+  --fw-black: calc(var(--fw-xbold, 800) + 100);
+
+  /* Font Stacks */
+  --fs-vela-sans: "Vela Sans", sans-serif, arial;
+}
