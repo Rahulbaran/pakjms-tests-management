@@ -24,7 +24,6 @@
 
   & input {
     background-color: var(--body-bg);
-    background-image: var(--body-bg-img);
     border: 1px solid var(--login-form-border);
     border-radius: calc(var(--base-br) * 0.15);
     color: var(--heading-color);
