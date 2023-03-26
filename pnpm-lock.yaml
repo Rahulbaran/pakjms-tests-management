@@ -5,6 +5,7 @@ specifiers:
   '@types/react-dom': ^18.0.11
   '@vitejs/plugin-legacy': ^4.0.2
   '@vitejs/plugin-react': ^3.1.0
+  dotenv: ^16.0.3
   eslint: ^8.36.0
   eslint-config-prettier: ^8.8.0
   eslint-plugin-jsx-a11y: ^6.7.1
@@ -25,6 +26,7 @@ specifiers:
   vite-plugin-lightningcss: ^0.0.5
 
 dependencies:
+  dotenv: 16.0.3
   node-fetch: 3.3.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -2092,6 +2094,11 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /electron-to-chromium/1.4.334:
     resolution: {integrity: sha512-laZ1odk+TRen6q0GeyQx/JEkpD3iSZT7ewopCpKqg9bTjP1l8XRfU3Bg20CFjNPZkp5+NDBl3iqd4o/kPO+Vew==}
