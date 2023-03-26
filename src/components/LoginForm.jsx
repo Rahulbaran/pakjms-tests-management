@@ -26,7 +26,7 @@ export default function LoginForm() {
           />
         </div>
 
-        <Link to="/classes" className="btn btn-primary">
+        <Link to="/classes" className="btn btn-primary login-btn">
           Login
         </Link>
       </div>

@@ -1,3 +1,36 @@
 .btn {
+  --primary-btn-bg: var(--dark-green);
+  --primary-btn-text: var(--light-green);
+  --secondary-btn-bg: var(--green);
+  --secondary-btn-text: var(--lightest-green);
+
+  background-color: var(--btn-bg);
+  border: 2px ridge var(--btn-text-color);
+  border-radius: calc(var(--base-br) * 0.2);
+  color: var(--btn-text-color);
+  font-size: calc(var(--base-fs) * 1.15);
   font-weight: var(--fw-medium);
+  padding: var(--base-padding) calc(var(--base-padding) * 2);
+  transition: opacity 250ms ease;
+
+  @media (prefers-color-scheme: dark) {
+    --primary-btn-bg: var(--lightest-green);
+    --primary-btn-text: var(--green);
+    --secondary-btn-bg: var(--light-green);
+    --secondary-btn-text: var(--dark-green);
+  }
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  --btn-bg: var(--primary-btn-bg);
+  --btn-text-color: var(--primary-btn-text);
+}
+
+.btn-secondary {
+  --btn-bg: var(--secondary-btn-bg);
+  --btn-text-color: var(--secondary-btn-text);
 }

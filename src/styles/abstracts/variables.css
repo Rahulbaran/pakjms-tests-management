@@ -16,4 +16,36 @@
 
   /* Font Stacks */
   --fs-vela-sans: "Vela Sans", sans-serif, arial;
+
+  /* Colors */
+  --dark-green: hwb(106 23% 68%);
+  --green: hwb(126 38% 40%);
+  --light-green: hwb(100 55% 25%);
+  --lightest-green: hwb(69 84% 5%);
+
+  --body-bg: var(--lightest-green);
+  --body-bg-img: linear-gradient(
+    to bottom,
+    var(--lightest-green),
+    var(--light-green)
+  );
+  --heading-color: var(--dark-green);
+  --text-color: var(--green);
+  --link-color: var(--dark-green);
+  --login-form-bg: var(--lightest-green);
+  --login-form-border: var(--light-green);
+  --input-bg: var(--body-bg);
+
+  @media (prefers-color-scheme: dark) {
+    --body-bg: var(--dark-green);
+    --body-bg-img: linear-gradient(
+      to bottom right,
+      var(--dark-green),
+      var(--green)
+    );
+    --heading-color: var(--lightest-green);
+    --text-color: var(--light-green);
+    --link-color: var(--lightest-green);
+    --login-form-bg: var(--green);
+  }
 }
