@@ -4,7 +4,7 @@ export default function LoginForm() {
   return (
     <main className="login-form-container">
       <div className="login-form">
-        <h1>आपका स्वागत है|</h1>
+        <h1>आपका स्वागत है| 🙏</h1>
 
         <div className="form-group">
           <label htmlFor="username">Username</label>
