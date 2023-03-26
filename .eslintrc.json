@@ -46,5 +46,5 @@
     "spaced-comment": 2,
     "comma-dangle": 2
   },
-  "ignorePatterns": ["*.config.js", "node_modules/*", "dist/*"]
+  "ignorePatterns": ["*.config.js", "node_modules/*", "dist/*", "functions/*"]
 }
