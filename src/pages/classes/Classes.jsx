@@ -1,3 +1,7 @@
 export default function Classes() {
-  return <></>;
+  return (
+    <div className="classes-wrapper">
+      <h1>Good Morning BIT</h1>
+    </div>
+  );
 }

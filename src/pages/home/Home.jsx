@@ -1,9 +1,7 @@
-import LoginForm from "../../components/LoginForm";
-
 export default function Home() {
   return (
     <div className="home-wrapper">
-      <LoginForm />
+      <h1>Homepage</h1>
     </div>
   );
 }
