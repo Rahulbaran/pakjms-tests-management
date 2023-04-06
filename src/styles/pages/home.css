@@ -1,56 +1,7 @@
-.login-form-container {
+.home-wrapper {
+  align-content: center;
   block-size: 100vh;
-  container: loginform / inline-size;
   display: grid;
+  gap: var(--base-gap);
   place-items: center;
-}
-
-.login-form {
-  background-color: var(--login-form-bg);
-  border: 1px solid var(--login-form-border);
-  border-radius: calc(var(--base-br) * 0.2);
-  inline-size: 85vw;
-  padding: calc(var(--base-padding) * 3);
-
-  & h1 {
-    margin-block-end: calc(var(--base-margin) * 1.5);
-  }
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-block-end: var(--base-margin);
-
-  & input {
-    background-color: var(--body-bg);
-    border: 1px solid var(--login-form-border);
-    border-radius: calc(var(--base-br) * 0.15);
-    color: var(--heading-color);
-    font-family: inherit;
-    font-size: calc(var(--base-fs) * 1.05);
-    padding: var(--base-padding);
-  }
-
-  & label {
-    color: var(--heading-color);
-  }
-}
-
-.login-btn {
-  letter-spacing: 0.5px;
-  margin-block-start: calc(var(--base-margin) * 1.25);
-}
-
-/* Container Queries */
-@container loginform (min-width: 48em) {
-  .login-form {
-    inline-size: 540px;
-  }
-}
-
-@container loginform (min-width: 79.9375em) {
-  .login-form {
-    inline-size: 620px;
-  }
 }
