@@ -8,11 +8,11 @@ import {
 /* pages */
 import Home from "./pages/home/Home";
 import Classes from "./pages/classes/Classes";
+import Class from "./pages/classes/Class";
 import NotFound from "./pages/NotFound";
 
 /* layouts */
 import RootLayout from "./layouts/RootLayout";
-import ClassLayout from "./layouts/ClassLayout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,11 +22,8 @@ const router = createBrowserRouter(
       errorElement={<div>Something went wrong</div>}
     >
       <Route index element={<Home />} />
-
-      <Route path="classes" element={<ClassLayout />}>
-        <Route index element={<Classes />} />
-        <Route path=":classId" element={<Classes />} />
-      </Route>
+      <Route path="classes" element={<Classes />} />
+      <Route path="classes/:classId" element={<Class />} />
 
       <Route path="*" element={<NotFound />} />
     </Route>
