@@ -9,7 +9,7 @@
   font-family: inherit;
   font-size: calc(var(--base-fs) * 1.15);
   font-weight: var(--fw-medium);
-  padding: calc(var(--base-padding) * 1.25) calc(var(--base-padding) * 2);
+  padding: calc(var(--base-padding) * 1.4) calc(var(--base-padding) * 2);
   transition: opacity 250ms ease;
 
   @media (prefers-color-scheme: dark) {
