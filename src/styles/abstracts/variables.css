@@ -22,6 +22,7 @@
   --green: hwb(126 38% 40%);
   --light-green: hwb(100 55% 25%);
   --lightest-green: hwb(69 84% 5%);
+  --shadow: 106 0% 100%;
 
   --body-bg: var(--lightest-green);
   --body-bg-img: linear-gradient(
@@ -35,6 +36,7 @@
   --login-form-bg: var(--lightest-green);
   --login-form-border: var(--light-green);
   --input-bg: var(--body-bg);
+  --classes-container-bg: var(--light-green);
 
   @media (prefers-color-scheme: dark) {
     --body-bg: var(--dark-green);
@@ -47,5 +49,6 @@
     --text-color: var(--light-green);
     --link-color: var(--lightest-green);
     --login-form-bg: var(--green);
+    --classes-container-bg: var(--dark-green);
   }
 }
