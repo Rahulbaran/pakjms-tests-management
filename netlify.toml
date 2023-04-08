@@ -10,6 +10,12 @@
 [functions]
     directory = "functions"
     node_bundler = "esbuild"
+    external_node_modules = ["mongodb"]
+
+[[redirects]]
+    from = "/*"
+    to = "index.html"
+    status = 200
 
 [[headers]]
     for = "/*"
