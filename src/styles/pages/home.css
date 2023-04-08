@@ -2,6 +2,10 @@
   align-content: center;
   block-size: 100vh;
   display: grid;
-  gap: var(--base-gap);
+  gap: calc(var(--base-gap) * 2);
   place-items: center;
+
+  & h1 {
+    font-size: calc(var(--base-fs) * 2.5);
+  }
 }
