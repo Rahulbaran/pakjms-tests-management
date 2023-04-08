@@ -38,6 +38,10 @@
   --input-bg: var(--body-bg);
   --classes-container-bg: var(--light-green);
 
+  /* Loader */
+  --loader-border-1: var(--dark-green);
+  --loader-border-2: var(--light-green);
+
   @media (prefers-color-scheme: dark) {
     --body-bg: var(--dark-green);
     --body-bg-img: linear-gradient(
@@ -50,5 +54,9 @@
     --link-color: var(--lightest-green);
     --login-form-bg: var(--green);
     --classes-container-bg: var(--dark-green);
+
+    /* Loader */
+    --loader-border-1: var(--green);
+    --loader-border-2: var(--lightest-green);
   }
 }
