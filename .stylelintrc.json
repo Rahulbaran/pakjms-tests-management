@@ -28,7 +28,8 @@
       "ms",
       "s",
       "vmin",
-      "vmax"
+      "vmax",
+      "deg"
     ],
     "max-nesting-depth": 2,
     "order/order": ["custom-properties", "declarations"]
