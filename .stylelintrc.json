@@ -31,7 +31,7 @@
       "vmax",
       "deg"
     ],
-    "max-nesting-depth": 2,
+    "max-nesting-depth": 4,
     "order/order": ["custom-properties", "declarations"]
   },
   "ignoreFiles": ["dist/**/*.css", "node_modules/**/**/*.css"]
