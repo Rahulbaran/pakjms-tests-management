@@ -20,9 +20,12 @@
   /* Colors */
   --dark-green: hwb(106 23% 78%);
   --green: hwb(126 38% 40%);
-  --light-green: hwb(100 55% 25%);
+  --light-green: hwb(100 60% 25%);
   --lightest-green: hwb(69 84% 5%);
   --shadow: 106 0% 100%;
+
+  /* Scrollbar */
+  --scrollbar-thumb-bg: var(--light-green);
 
   --body-bg: var(--lightest-green);
   --body-bg-img: linear-gradient(
@@ -37,6 +40,13 @@
   --login-form-border: var(--light-green);
   --input-bg: var(--body-bg);
   --classes-container-bg: var(--light-green);
+  --subjects-navigation-bg: var(--light-green);
+  --subject-hover-bg: var(--lightest-green);
+
+  /* Table */
+  --table-container-bg: var(--lightest-green);
+  --table-border: var(--light-green);
+  --table-row-bg: var(--light-green);
 
   /* Loader */
   --loader-border-1: var(--dark-green);
@@ -54,6 +64,12 @@
     --link-color: var(--lightest-green);
     --login-form-bg: var(--green);
     --classes-container-bg: var(--dark-green);
+    --subjects-navigation-bg: var(--dark-green);
+    --subject-hover-bg: var(--green);
+
+    /* Table */
+    --table-container-bg: var(--dark-green);
+    --table-row-bg: var(--green);
 
     /* Loader */
     --loader-border-1: var(--green);
