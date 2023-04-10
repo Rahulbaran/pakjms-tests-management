@@ -4,7 +4,10 @@ export default function Classes() {
   return (
     <div className="classes-wrapper">
       <div className="add-student-wrapper">
-        <button className="btn btn-primary">Add Student</button>
+        <button className="btn btn-primary">
+          <span className="material-icons">add_circle</span>
+          <span>Add a Student</span>
+        </button>
       </div>
 
       <main className="classes-container">
