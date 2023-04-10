@@ -5,9 +5,10 @@
   gap: calc(var(--base-gap) * 2);
 
   .loader-wheel {
-    animation: loader-animation 250ms steps(20) infinite;
+    animation: loader-animation 150ms steps(30) infinite;
     aspect-ratio: 1;
-    border-color: var(--loader-border-1) var(--loader-border-2);
+    border-color: var(--loader-border-1) var(--loader-border-1)
+      var(--loader-border-2) var(--loader-border-2);
     border-radius: 50%;
     border-style: solid;
     border-width: 0.7em;
