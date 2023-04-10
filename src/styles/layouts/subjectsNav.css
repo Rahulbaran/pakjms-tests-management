@@ -1,0 +1,19 @@
+.subjects-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--base-gap);
+  justify-content: center;
+
+  & button {
+    transition: background-color 250ms ease;
+
+    &:hover {
+      background-color: var(--subject-hover-bg);
+    }
+  }
+
+  @media screen and (width > 62em) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
