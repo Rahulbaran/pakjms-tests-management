@@ -12,6 +12,22 @@
   padding: calc(var(--base-padding) * 1.4) calc(var(--base-padding) * 2);
   transition: opacity 250ms ease;
 
+  &:has(span) {
+    align-items: center;
+    display: flex;
+    gap: calc(var(--base-gap) * 0.5);
+  }
+
+  > span {
+    color: var(--btn-text-color);
+    font-size: calc(var(--base-fs) * 1.15);
+    font-weight: var(--fw-medium);
+
+    &.material-icons {
+      font-size: calc(var(--base-fs) * 1.4);
+    }
+  }
+
   @media (prefers-color-scheme: dark) {
     --primary-btn-bg: var(--light-green);
     --primary-btn-text: var(--dark-green);
