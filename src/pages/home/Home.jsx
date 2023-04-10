@@ -7,7 +7,8 @@ export default function Home() {
     <div className="home-wrapper">
       <h1>आपका स्वागत है 🙏</h1>
       <button className="btn btn-primary" onClick={() => navigate("/classes")}>
-        Go to Classes
+        <span>Check Classes</span>
+        <span className="material-icons">arrow_forward</span>
       </button>
     </div>
   );
