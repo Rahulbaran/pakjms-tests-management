@@ -1,9 +1,9 @@
-export default function Tables({ classId }) {
+export default function Tables({ classId, openModal }) {
   const arr = new Array(20).fill(Math.random());
 
   return (
     <main className="tables-wrapper">
-      <button className="btn btn-primary">
+      <button className="btn btn-primary" onClick={openModal}>
         <span className="material-icons">add_circle</span>
         <span>Add a test</span>
       </button>
