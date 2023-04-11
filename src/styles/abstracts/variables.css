@@ -36,9 +36,6 @@
   --heading-color: var(--dark-green);
   --text-color: var(--green);
   --link-color: var(--dark-green);
-  --login-form-bg: var(--lightest-green);
-  --login-form-border: var(--light-green);
-  --input-bg: var(--body-bg);
   --classes-container-bg: var(--light-green);
   --subjects-navigation-bg: var(--light-green);
   --subject-hover-bg: var(--lightest-green);
@@ -62,7 +59,6 @@
     --heading-color: var(--lightest-green);
     --text-color: var(--light-green);
     --link-color: var(--lightest-green);
-    --login-form-bg: var(--green);
     --classes-container-bg: var(--dark-green);
     --subjects-navigation-bg: var(--dark-green);
     --subject-hover-bg: var(--green);
