@@ -6,7 +6,7 @@
   flex-direction: column;
   gap: calc(var(--base-gap) * 4);
   align-items: center;
-  inline-size: min(90vw, 620px);
+  inline-size: min(90vw, 640px);
   max-block-size: 30em;
   overflow-y: auto;
   padding: calc(var(--base-padding) * 3);
@@ -94,11 +94,47 @@
 
     & tbody input {
       font-family: inherit;
+      font-size: inherit;
+      padding: calc(var(--base-padding) * 0.25) var(--base-padding);
     }
   }
 
   & table tr:hover {
     background-color: initial;
+  }
+
+  .table-info {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--base-gap) * 3);
+  }
+
+  .table-input-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--base-gap) * 2) calc(var(--base-gap) * 3);
+
+    .form-group {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+
+      & label {
+        line-height: calc(var(--base-lh) * 0.7);
+      }
+
+      & :where(input, select) {
+        max-inline-size: 200px;
+        font-family: inherit;
+        font-size: inherit;
+        padding: var(--base-padding) calc(var(--base-padding) * 0.75);
+      }
+    }
+  }
+
+  .create-test-btn {
+    align-self: flex-end;
   }
 }
 
@@ -116,6 +152,7 @@
     text-align: center;
     text-decoration: underline 0.11em solid currentcolor;
     text-underline-offset: 0.1em;
+    font-size: calc(var(--base-fs) * 1.75);
   }
 }
 
@@ -125,9 +162,13 @@
   padding: calc(var(--base-padding) * 2);
 
   & h2 {
-    text-align: center;
     text-decoration: underline 0.11em solid currentcolor;
     text-underline-offset: 0.1em;
+    font-size: calc(var(--base-fs) * 2.25);
+
+    @media screen and (width > 62em) {
+      text-align: center;
+    }
   }
 
   > button {
@@ -145,19 +186,20 @@
   justify-content: center;
   margin-block-start: calc(var(--base-margin) * 8);
 
+  .table-info {
+    inline-size: 100%;
+    display: flex;
+    gap: calc(var(--base-gap) * 5);
+    justify-content: space-between;
+    align-items: center;
+
+    & > p {
+      font-size: calc(var(--base-fs) * 1.2);
+      font-weight: var(--fw-medium);
+    }
+  }
+
   .table-delete-btn {
     align-self: flex-end;
-  }
-}
-
-.table-info {
-  display: flex;
-  gap: calc(var(--base-gap) * 5);
-  justify-content: space-between;
-  align-items: center;
-
-  & > p {
-    font-size: calc(var(--base-fs) * 1.2);
-    font-weight: var(--fw-medium);
   }
 }
