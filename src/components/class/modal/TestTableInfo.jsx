@@ -10,11 +10,12 @@ export default function TestTableInfo({ subjects, focused }) {
         <div className="form-group">
           <label htmlFor="subject">Subject</label>
           <select name="subjects">
-            {subjects.map(sub => (
-              <option value={sub} key={sub}>
-                {sub}
-              </option>
-            ))}
+            {subjects.length > 0 &&
+              subjects.map(sub => (
+                <option value={sub} key={sub}>
+                  {sub}
+                </option>
+              ))}
           </select>
         </div>
 
