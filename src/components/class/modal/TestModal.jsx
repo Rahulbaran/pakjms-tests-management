@@ -1,10 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 /* Components */
-import TestEntryTable from "./TestEntryTable";
 import TestTableInfo from "./TestTableInfo";
+import TestEntryTable from "./TestEntryTable";
 
 export default function TestModal({ classId, subjects, modal, closeModal }) {
+  const focused = useRef(null);
+
+  useEffect(() => {
+    if (modal) focused.current.focus();
+  }, [modal]);
+
   useEffect(() => {
     const close = e => {
       if (e.key === "Escape") closeModal();
@@ -31,8 +37,12 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
 
       <div className="test-modal">
         <div className="table-container">
-          <TestTableInfo subjects={subjects} />
+          <TestTableInfo subjects={subjects} focused={focused} />
           <TestEntryTable classId={classId} />
+          <button className="btn btn-primary create-test-btn">
+            <span className="material-icons">add</span>
+            <span>Create Test</span>
+          </button>
         </div>
       </div>
 
