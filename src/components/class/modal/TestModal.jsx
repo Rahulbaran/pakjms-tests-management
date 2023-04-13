@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import TestTableInfo from "./TestTableInfo";
 import TestEntryTable from "./TestEntryTable";
 
-export default function TestModal({ classId, subjects, modal, closeModal }) {
+export default function TestModal({ classId, modal, closeModal }) {
   const focused = useRef(null);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
 
       <div className="test-modal">
         <div className="table-container">
-          <TestTableInfo subjects={subjects} focused={focused} />
+          <TestTableInfo focused={focused} />
           <TestEntryTable classId={classId} />
           <button className="btn btn-primary create-test-btn">
             <span className="material-icons">add</span>

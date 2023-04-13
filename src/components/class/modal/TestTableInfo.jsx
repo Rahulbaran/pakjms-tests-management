@@ -1,4 +1,4 @@
-export default function TestTableInfo({ subjects, focused }) {
+export default function TestTableInfo({ focused }) {
   return (
     <div className="table-info">
       <div className="table-input-fields">

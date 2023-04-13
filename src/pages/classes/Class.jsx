@@ -18,6 +18,8 @@ export default function Class() {
       const data = await response.json();
       setSubjects(data.subjects);
       setLoading(false);
+
+      console.log(data);
     };
 
     fetchClasses();
@@ -25,11 +27,7 @@ export default function Class() {
 
   return (
     <div className="class-wrapper">
-      {loading ? (
-        <Loader />
-      ) : (
-        <ClassContent subjects={subjects} classId={classId} />
-      )}
+      {loading ? <Loader /> : <ClassContent classId={classId} />}
     </div>
   );
 }

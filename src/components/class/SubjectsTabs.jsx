@@ -1,4 +1,4 @@
-export default function SubjectsTabs({ subjects }) {
+export default function SubjectsTabs() {
   return (
     <div className="subjects-navigation-wrapper">
       <h1>Subjects</h1>
