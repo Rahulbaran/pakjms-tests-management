@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 /* Components */
-import TestModal from "../../components/class/modal/TestModal";
+// import TestModal from "../../components/class/modal/TestModal";
 import SubjectsTabs from "../../components/class/SubjectsTabs";
 import TestTables from "../../components/class/TestTables";
 
@@ -13,7 +13,7 @@ export default function ClassContent({ classId }) {
 
   return (
     <div className="class-content-wrapper">
-      <TestModal classId={classId} modal={modal} closeModal={closeModal} />
+      {/* <TestModal classId={classId} modal={modal} closeModal={closeModal} /> */}
       <SubjectsTabs />
       <TestTables classId={classId} openModal={openModal} />
     </div>

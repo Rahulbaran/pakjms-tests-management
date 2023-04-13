@@ -11,18 +11,19 @@ export default function Class() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchClasses = async () => {
-      const response = await fetch(
-        `/.netlify/functions/fetchSubjects?class=${classId}`
-      );
-      const data = await response.json();
-      setSubjects(data.subjects);
-      setLoading(false);
+    // const fetchClasses = async () => {
+    //   const response = await fetch(
+    //     `/.netlify/functions/fetchSubjects?class=${classId}`
+    //   );
+    //   const data = await response.json();
+    //   setSubjects(data.subjects);
+    //   setLoading(false);
 
-      console.log(data);
-    };
+    //   console.log(data);
+    // };
 
-    fetchClasses();
+    // fetchClasses();
+    setLoading(false);
   }, [classId]);
 
   return (
