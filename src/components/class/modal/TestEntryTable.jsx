@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+/* Components */
+import Loader from "../../Loader";
+
 export default function TestTable({ classId }) {
   const [students, setStudents] = useState([]);
 
@@ -14,26 +17,32 @@ export default function TestTable({ classId }) {
   }, [classId]);
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>SL. No.</th>
-          <th>Student Name</th>
-          <th>Student Marks</th>
-        </tr>
-      </thead>
+    <>
+      {students.length === 0 ? (
+        <Loader />
+      ) : (
+        <table>
+          <thead>
+            <tr>
+              <th>SL. No.</th>
+              <th>Student Name</th>
+              <th>Student Marks</th>
+            </tr>
+          </thead>
 
-      <tbody>
-        {students.map((student, index) => (
-          <tr key={student._id}>
-            <td>{index + 1}.</td>
-            <td>{student.student_name}</td>
-            <td>
-              <input type="number" min="0" max="100" step="5" />
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          <tbody>
+            {students.map((student, index) => (
+              <tr key={student._id}>
+                <td>{index + 1}.</td>
+                <td>{student.student_name}</td>
+                <td>
+                  <input type="number" min="0" max="100" step="5" />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </>
   );
 }
