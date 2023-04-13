@@ -8,15 +8,7 @@ import TestTables from "../../components/class/TestTables";
 export default function ClassContent({ subjects, classId }) {
   const [modal, setModal] = useState(false);
 
-  const openModal = () => {
-    // const dialog = document.querySelector(".dialog");
-
-    // Array.from(document.body.children).forEach(child => {
-    //   if (child !== dialog) child.inert = true;
-    // });
-
-    setModal(true);
-  };
+  const openModal = () => setModal(true);
   const closeModal = () => setModal(false);
 
   return (
