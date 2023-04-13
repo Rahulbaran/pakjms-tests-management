@@ -8,9 +8,7 @@
     port = 8080
 
 [functions]
-    directory = "functions"
-    node_bundler = "esbuild"
-    external_node_modules = ["mongodb"]
+    directory = "functions/"
 
 [[redirects]]
     from = "/*"
