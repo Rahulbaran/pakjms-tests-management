@@ -1,9 +1,12 @@
-export default function TestTableInfo({ subjects }) {
+export default function TestTableInfo({ subjects, focused }) {
   return (
     <div className="table-info">
-      <h2 id="modal_title">Create a new Test</h2>
-
       <div className="table-input-fields">
+        <div className="form-group">
+          <label htmlFor="test-date">Test Date</label>
+          <input type="date" ref={focused} name="test-date" id="test-date" />
+        </div>
+
         <div className="form-group">
           <label htmlFor="subject">Subject</label>
           <select name="subjects">
