@@ -1,6 +1,4 @@
-import dotenv from "dotenv";
-dotenv.config();
-import { MongoClient } from "mongodb";
+const { MongoClient } = require("mongodb");
 
 const [MONGO_USER, MONGO_PASSWORD] = [
   process.env.MONGO_USER,
@@ -8,7 +6,7 @@ const [MONGO_USER, MONGO_PASSWORD] = [
 ];
 const mongoUrl = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@pakjms-apps.zywf02i.mongodb.net/?retryWrites=true&w=majority`;
 
-export const handler = async event => {
+exports.handler = async function (event) {
   const classId = +event.queryStringParameters.class;
   const client = new MongoClient(mongoUrl);
 
