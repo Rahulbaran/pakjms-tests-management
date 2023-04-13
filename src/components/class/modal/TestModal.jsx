@@ -21,7 +21,7 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
 
   return (
     <div
-      className="test-modal-container dialog"
+      className="test-modal-container"
       role="dialog"
       aria-hidden={modal ? "false" : "true"}
       aria-labelledby="modal_title"
