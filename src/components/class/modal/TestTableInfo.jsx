@@ -7,7 +7,7 @@ export default function TestTableInfo({ subjects, focused }) {
           <input type="date" ref={focused} name="test-date" id="test-date" />
         </div>
 
-        <div className="form-group">
+        {/* <div className="form-group">
           <label htmlFor="subject">Subject</label>
           <select name="subjects">
             {subjects.length > 0 &&
@@ -17,7 +17,7 @@ export default function TestTableInfo({ subjects, focused }) {
                 </option>
               ))}
           </select>
-        </div>
+        </div> */}
 
         <div className="form-group">
           <label htmlFor="full_marks">Full Marks</label>
