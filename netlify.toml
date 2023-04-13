@@ -1,18 +1,18 @@
 [build]
-    publish = "dist"
-    command = "pnpm run build"
-
-[dev]
-    publish = "src"
-    command = "pnpm start"
-    port = 8080
+    publish = 'dist'
+    command = 'pnpm run build'
 
 [functions]
-    directory = "functions"
-    node_bundler = "esbuild"
-    external_node_modules = ["mongodb"]
-
+    external_node_modules = ['mongodb']
+    directory = 'functions'
+    node_bundler = 'esbuild'
+    
 [[redirects]]
-    from = "/*"
-    to = "index.html"
+    from = '/*'
+    to = 'index.html'
     status = 200
+
+[dev]
+    publish = 'src'
+    command = 'pnpm start'
+    port = 8080
