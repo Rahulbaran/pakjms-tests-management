@@ -1,5 +1,3 @@
-import dotenv from "dotenv";
-dotenv.config();
 import { MongoClient } from "mongodb";
 
 const [MONGO_USER, MONGO_PASSWORD] = [
