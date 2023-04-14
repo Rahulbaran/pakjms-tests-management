@@ -1,21 +1,7 @@
-import { useState, useEffect } from "react";
-
 /* Components */
 import Loader from "../../Loader";
 
-export default function TestTable({ classId }) {
-  const [students, setStudents] = useState([]);
-
-  useEffect(() => {
-    const fetchStudents = async () => {
-      const response = await fetch(
-        `/.netlify/functions/fetchStudents?classId=${classId}`
-      );
-      setStudents(await response.json());
-    };
-    fetchStudents();
-  }, [classId]);
-
+export default function TestTable({ students, marks, handleMarks }) {
   return (
     <>
       {students.length === 0 ? (
@@ -36,7 +22,14 @@ export default function TestTable({ classId }) {
                 <td>{index + 1}.</td>
                 <td>{student.student_name}</td>
                 <td>
-                  <input type="number" min="0" max="100" step="5" />
+                  <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value={marks[index]}
+                    onChange={e => handleMarks(e, index)}
+                  />
                 </td>
               </tr>
             ))}
