@@ -1,15 +1,31 @@
-export default function TestTableInfo({ subjects, focused }) {
+export default function TestTableInfo({
+  subjects,
+  focused,
+  studentsInfo,
+  handleChange
+}) {
   return (
     <div className="table-info">
       <div className="table-input-fields">
         <div className="form-group">
           <label htmlFor="test-date">Test Date</label>
-          <input type="date" ref={focused} name="test-date" id="test-date" />
+          <input
+            type="date"
+            ref={focused}
+            name="test-date"
+            id="test-date"
+            value={studentsInfo.date}
+            onChange={e => handleChange(e, "date")}
+          />
         </div>
 
         <div className="form-group">
           <label htmlFor="subject">Subject</label>
-          <select name="subjects">
+          <select
+            name="subjects"
+            value={studentsInfo.subject}
+            onChange={e => handleChange(e, "subject")}
+          >
             {subjects.length > 0 &&
               subjects.map(sub => (
                 <option value={sub} key={sub}>
@@ -26,6 +42,8 @@ export default function TestTableInfo({ subjects, focused }) {
             name="full_marks"
             id="full_marks"
             placeholder="test full marks"
+            value={studentsInfo.fm}
+            onChange={e => handleChange(e, "fm")}
           />
         </div>
       </div>
