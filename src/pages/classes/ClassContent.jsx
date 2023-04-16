@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 /* Components */
 import TestModal from "../../components/class/modal/TestModal";
@@ -7,6 +7,18 @@ import TestTables from "../../components/class/TestTables";
 
 export default function ClassContent({ subjects, classId }) {
   const [modal, setModal] = useState(false);
+  const [subject, setSubject] = useState("Hindi");
+  const [tests, setTests] = useState([]);
+
+  useEffect(() => {
+    const fetchTests = async () => {
+      const response = await fetch(
+        `/.netlify/functions/fetchTests?subject=${subject}&classId=${classId}`
+      );
+      setTests(await response.json());
+    };
+    fetchTests();
+  }, [subject, classId]);
 
   const openModal = () => setModal(true);
   const closeModal = () => setModal(false);
@@ -20,7 +32,7 @@ export default function ClassContent({ subjects, classId }) {
         closeModal={closeModal}
       />
       <SubjectsTabs subjects={subjects} />
-      <TestTables classId={classId} openModal={openModal} />
+      <TestTables classId={classId} tests={tests} openModal={openModal} />
     </div>
   );
 }
