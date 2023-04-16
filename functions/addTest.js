@@ -24,5 +24,7 @@ export const handler = async event => {
       statusCode: 500,
       body: JSON.stringify(error)
     };
+  } finally {
+    await client.close();
   }
 };
