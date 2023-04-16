@@ -18,9 +18,9 @@ export default function TestTable({ students, marks, handleMarks }) {
 
           <tbody>
             {students.map((student, index) => (
-              <tr key={student._id}>
+              <tr key={index}>
                 <td>{index + 1}.</td>
-                <td>{student.student_name}</td>
+                <td>{student}</td>
                 <td>
                   <input
                     type="number"
