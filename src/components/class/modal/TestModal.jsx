@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import TestTableInfo from "./TestTableInfo";
 import TestEntryTable from "./TestEntryTable";
 
+/* Utils */
+import modifyStudents from "../../../utils/modifyStudents";
+
 export default function TestModal({ classId, subjects, modal, closeModal }) {
   const focused = useRef(null);
   const [studentsInfo, setStudentsInfo] = useState({
@@ -13,6 +16,8 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
     students: []
   });
   const [marks, setMarks] = useState([]);
+  const [error, setError] = useState("");
+  const [msg, setMsg] = useState("");
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -22,7 +27,7 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
       const students = await response.json();
       setStudentsInfo(prev => ({
         ...prev,
-        students
+        students: modifyStudents(students)
       }));
       setMarks(new Array(students.length).fill(""));
     };
@@ -54,15 +59,39 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
     ]);
   }
 
-  function handleTest() {
+  async function handleTest() {
     const { fm, date } = studentsInfo;
 
     if (!fm || !date) {
-      console.log("either date or fm is missing");
+      setError("Either 'Date' or 'Full Marks' is missing");
       return undefined;
     }
+    setError("");
 
-    console.log(studentsInfo, marks);
+    try {
+      const response = await fetch(
+        `/.netlify/functions/addTest?classId=${classId}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ ...studentsInfo, marks })
+        }
+      );
+      closeModal();
+
+      setStudentsInfo(info => ({
+        ...info,
+        subject: "Hindi",
+        date: "",
+        fm: ""
+      }));
+      setMarks([]);
+      setMsg(await response.json());
+    } catch (error) {
+      setMsg(error);
+    }
   }
 
   return (
@@ -94,6 +123,15 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
             marks={marks}
             handleMarks={handleMarks}
           />
+          <p
+            className="error"
+            style={{
+              display: error ? "block" : "none",
+              color: "hwb(0 40% 0%)"
+            }}
+          >
+            {error}
+          </p>
           <button
             className="btn btn-primary create-test-btn"
             onClick={handleTest}
