@@ -189,7 +189,7 @@
   .table-info {
     inline-size: 100%;
     display: flex;
-    gap: calc(var(--base-gap) * 5);
+    gap: calc(var(--base-gap) * 3);
     justify-content: space-between;
     align-items: center;
 
