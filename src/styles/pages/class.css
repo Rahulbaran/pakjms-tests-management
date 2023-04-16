@@ -161,30 +161,32 @@
   position: relative;
   padding: calc(var(--base-padding) * 2);
 
-  & h2 {
-    text-decoration: underline 0.11em solid currentcolor;
-    text-underline-offset: 0.1em;
-    font-size: calc(var(--base-fs) * 2.25);
+  .page-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: calc(var(--base-gap) * 3);
 
-    @media screen and (width > 62em) {
+    & h2 {
+      text-decoration: underline 0.11em solid currentcolor;
+      text-underline-offset: 0.1em;
       text-align: center;
+      font-size: calc(var(--base-fs) * 2.25);
     }
-  }
-
-  > button {
-    position: absolute;
-    inset-block-start: 1em;
-    inset-inline-end: 1em;
   }
 }
 
 .tables {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--base-gap) * 6);
+  gap: calc(var(--base-gap) * 8);
   align-items: center;
   justify-content: center;
-  margin-block-start: calc(var(--base-margin) * 8);
+  margin-block-start: calc(var(--base-margin) * 10);
+
+  .table-container {
+    max-block-size: 35em;
+  }
 
   .table-info {
     inline-size: 100%;
