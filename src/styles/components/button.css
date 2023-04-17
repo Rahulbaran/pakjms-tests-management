@@ -15,6 +15,7 @@
   @supports selector(&:has(span)) {
     &:has(span) {
       align-items: center;
+      justify-content: center;
       display: flex;
       gap: calc(var(--base-gap) * 0.5);
     }
