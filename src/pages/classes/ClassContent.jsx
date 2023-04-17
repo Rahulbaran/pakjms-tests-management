@@ -13,13 +13,15 @@ export default function ClassContent({ subjects, classId }) {
   useEffect(() => {
     const fetchTests = async () => {
       const response = await fetch(
-        `/.netlify/functions/fetchTests?subject=${subject}&classId=${classId}`
+        `/.netlify/functions/fetchTests?classId=${classId}`
       );
       const tests = [...(await response.json())].reverse();
       setTests(tests);
     };
     fetchTests();
-  }, [subject, classId]);
+  }, [classId]);
+
+  const handleSubject = e => setSubject(e.target.textContent);
 
   const openModal = () => setModal(true);
   const closeModal = () => setModal(false);
@@ -32,8 +34,16 @@ export default function ClassContent({ subjects, classId }) {
         modal={modal}
         closeModal={closeModal}
       />
-      <SubjectsTabs subjects={subjects} />
-      <TestTables classId={classId} tests={tests} openModal={openModal} />
+      <SubjectsTabs
+        subjects={subjects}
+        subject={subject}
+        handleSubject={handleSubject}
+      />
+      <TestTables
+        classId={classId}
+        tests={tests.filter(test => test.subject === subject)}
+        openModal={openModal}
+      />
     </div>
   );
 }

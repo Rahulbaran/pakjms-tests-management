@@ -73,6 +73,9 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
         }
       );
       closeModal();
+      Array.from(document.getElementsByClassName("test-marks")).forEach(
+        mark => (mark.value = "")
+      );
       setStudentsInfo(info => ({
         ...info,
         subject: "Hindi",
