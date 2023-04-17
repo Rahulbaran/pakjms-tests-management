@@ -35,7 +35,7 @@ export default function Tables({ classId, tests, openModal }) {
                 <div className="chart-container">
                   <button className="btn btn-primary">
                     <span className="material-icons">analytics</span>
-                    <span>See Chart</span>
+                    <span>Chart</span>
                   </button>
                 </div>
               </div>
