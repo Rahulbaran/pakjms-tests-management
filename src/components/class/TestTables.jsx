@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 /* Components */
 import Loader from "../Loader";
 
@@ -5,6 +7,8 @@ import Loader from "../Loader";
 import modifyDateString from "../../utils/modifyDateString";
 
 export default function Tables({ classId, allTests, subject, openModal }) {
+  const navigate = useNavigate();
+
   const tests = allTests.filter(test => test.subject === subject);
 
   const testTables = () => {
@@ -58,7 +62,11 @@ export default function Tables({ classId, allTests, subject, openModal }) {
   return (
     <main className="tables-wrapper">
       <div className="page-info">
-        <button className="btn btn-primary" title="refresh">
+        <button
+          className="btn btn-primary"
+          title="refresh"
+          onClick={() => navigate(0)}
+        >
           <span className="material-icons">refresh</span>
         </button>
 
