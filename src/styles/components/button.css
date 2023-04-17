@@ -21,11 +21,9 @@
   }
 
   @supports not selector(&:has(span)) {
-    .btn {
-      align-items: center;
-      display: flex;
-      gap: calc(var(--base-gap) * 0.5);
-    }
+    align-items: center;
+    display: flex;
+    gap: calc(var(--base-gap) * 0.5);
   }
 
   > span {
