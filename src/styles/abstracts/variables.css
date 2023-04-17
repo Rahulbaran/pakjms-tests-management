@@ -43,7 +43,7 @@
 
   /* Table */
   --table-container-bg: var(--lightest-green);
-  --table-border: var(--light-green);
+  --table-border: hwb(100 40% 50% / 0.25);
   --table-row-bg: var(--light-green);
 
   /* Loader */
