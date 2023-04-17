@@ -15,7 +15,8 @@ export default function ClassContent({ subjects, classId }) {
       const response = await fetch(
         `/.netlify/functions/fetchTests?subject=${subject}&classId=${classId}`
       );
-      setTests(await response.json());
+      const tests = [...(await response.json())].reverse();
+      setTests(tests);
     };
     fetchTests();
   }, [subject, classId]);
