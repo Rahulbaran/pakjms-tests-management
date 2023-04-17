@@ -14,7 +14,7 @@ export const handler = async event => {
     const db = client.db("tests-management");
     const tests = await db
       .collection(`class-${classId}`)
-      .find({}, { subject })
+      .find({ subject })
       .toArray();
 
     return {
