@@ -192,12 +192,12 @@
   .table-info {
     inline-size: 100%;
     display: flex;
-    gap: calc(var(--base-gap) * 3);
+    gap: calc(var(--base-gap) * 2);
     justify-content: space-between;
     align-items: center;
 
     & > p {
-      font-size: calc(var(--base-fs) * 1.2);
+      font-size: calc(var(--base-fs) * 1.15);
       font-weight: var(--fw-medium);
     }
   }
