@@ -12,10 +12,20 @@
   padding: calc(var(--base-padding) * 1.4) calc(var(--base-padding) * 2);
   transition: opacity 250ms ease;
 
-  &:has(span) {
-    align-items: center;
-    display: flex;
-    gap: calc(var(--base-gap) * 0.5);
+  @supports selector(&:has(span)) {
+    &:has(span) {
+      align-items: center;
+      display: flex;
+      gap: calc(var(--base-gap) * 0.5);
+    }
+  }
+
+  @supports not selector(&:has(span)) {
+    .btn {
+      align-items: center;
+      display: flex;
+      gap: calc(var(--base-gap) * 0.5);
+    }
   }
 
   > span {
