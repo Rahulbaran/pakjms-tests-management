@@ -41,7 +41,8 @@ export default function ClassContent({ subjects, classId }) {
       />
       <TestTables
         classId={classId}
-        tests={tests.filter(test => test.subject === subject)}
+        allTests={tests}
+        subject={subject}
         openModal={openModal}
       />
     </div>
