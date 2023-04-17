@@ -1,7 +1,7 @@
 /* Components */
 import Loader from "../../Loader";
 
-export default function TestTable({ students, marks, handleMarks }) {
+export default function TestTable({ students }) {
   return (
     <>
       {students.length === 0 ? (
@@ -27,8 +27,7 @@ export default function TestTable({ students, marks, handleMarks }) {
                     min="0"
                     max="100"
                     step="5"
-                    value={marks[index]}
-                    onChange={e => handleMarks(e, index)}
+                    className="test-marks"
                   />
                 </td>
               </tr>

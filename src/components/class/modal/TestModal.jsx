@@ -15,7 +15,6 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
     fm: "",
     students: []
   });
-  const [marks, setMarks] = useState([]);
   const [error, setError] = useState("");
   const [msg, setMsg] = useState("");
 
@@ -29,7 +28,6 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
         ...prev,
         students: modifyStudents(students)
       }));
-      setMarks(new Array(students.length).fill(""));
     };
     fetchStudents();
   }, [classId]);
@@ -51,22 +49,17 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
     setStudentsInfo(data => ({ ...data, [field]: e.target.value }));
   }
 
-  function handleMarks(e, index) {
-    setMarks(marks => [
-      ...marks.slice(0, index),
-      marks[index] + e.target.value.at(-1),
-      ...marks.slice(index + 1, -1)
-    ]);
-  }
-
   async function handleTest() {
     const { fm, date } = studentsInfo;
-
     if (!fm || !date) {
       setError("Either 'Date' or 'Full Marks' is missing");
       return undefined;
     }
     setError("");
+
+    const marks = Array.from(document.getElementsByClassName("test-marks")).map(
+      ele => ele.value
+    );
 
     try {
       const response = await fetch(
@@ -80,14 +73,12 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
         }
       );
       closeModal();
-
       setStudentsInfo(info => ({
         ...info,
         subject: "Hindi",
         date: "",
         fm: ""
       }));
-      setMarks([]);
       setMsg(await response.json());
     } catch (error) {
       setMsg(error);
@@ -120,8 +111,8 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
           />
           <TestEntryTable
             students={studentsInfo.students}
-            marks={marks}
-            handleMarks={handleMarks}
+            // marks={marks}
+            // handleMarks={handleMarks}
           />
           <p
             className="error"
