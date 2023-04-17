@@ -96,6 +96,7 @@
       font-family: inherit;
       font-size: inherit;
       padding: calc(var(--base-padding) * 0.25) var(--base-padding);
+      max-inline-size: 4em;
     }
   }
 
