@@ -19,6 +19,10 @@
       display: flex;
       gap: calc(var(--base-gap) * 0.5);
     }
+
+    &:not(:has(span)) {
+      text-align: center;
+    }
   }
 
   @supports not selector(&:has(span)) {
