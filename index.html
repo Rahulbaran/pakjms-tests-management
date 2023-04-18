@@ -18,10 +18,17 @@
     <meta name="color-scheme" content="dark light" />
     <title>Home | PAKJMS Tests Management</title>
 
-    <!------------- Favicon ------------>
+    <!-------------------- Favicon --------------------->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
 
-    <script type="module" src="/src/main.jsx" defer></script>
+    <!----------------- Font Preloading ---------------->
+    <link
+      rel="preload"
+      href="/fonts/VelaSans.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
 
     <!-------------------- Google Material Icons ------------------>
     <link
@@ -36,6 +43,8 @@
         rel="stylesheet"
       />
     </noscript>
+
+    <script type="module" src="/src/main.jsx" defer></script>
   </head>
   <body>
     <div id="root"></div>
