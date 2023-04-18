@@ -1,5 +1,3 @@
 # pakjms-tests-management
 
-A Single Page Application for managing tests results created using React and Netlify functions.
-
-
+- It is a **Single Page Application** which has been created using _React_, _Netlify Functions_ & _MongoDB_.
