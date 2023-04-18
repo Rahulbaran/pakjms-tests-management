@@ -1,12 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Classes() {
+  const navigate = useNavigate();
+
   return (
     <div className="classes-wrapper">
       <div className="add-student-wrapper">
+        <button className="btn btn-primary" onClick={() => navigate("/")}>
+          <span className="material-icons">arrow_back</span>
+          <span>Go Back</span>
+        </button>
+
         <button className="btn btn-primary">
           <span className="material-icons">add_circle</span>
-          <span>Add a Student</span>
+          <span>Add Student</span>
         </button>
       </div>
 
