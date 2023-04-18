@@ -8,8 +8,15 @@
     "email": "rahulkumar109422@gmail.com"
   },
   "license": "MIT",
-  "keywords": [],
-  "description": "",
+  "keywords": [
+    "tests",
+    "management",
+    "tests-management",
+    "pakjms",
+    "pakjms-tests-management",
+    "pakjms-tests"
+  ],
+  "description": "It is a Single Page Application which has been created using React and Netlify functions with MongoDB as database",
   "prettier": {
     "arrowParens": "avoid",
     "singleQuote": false,
