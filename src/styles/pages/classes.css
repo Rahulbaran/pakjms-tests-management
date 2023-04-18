@@ -6,9 +6,12 @@
 }
 
 .add-student-wrapper {
-  inset-block-start: 0.5em;
-  inset-inline-end: 0.5em;
+  inset-block-start: 1em;
   position: absolute;
+  inline-size: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: calc(var(--base-padding) * 2);
 }
 
 .classes-container {
