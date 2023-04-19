@@ -11,6 +11,10 @@ export default function Class() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    window.document.title = `Class - ${classId} | PAKJMS Tests Management`;
+  }, [classId]);
+
+  useEffect(() => {
     const fetchClasses = async () => {
       const response = await fetch(
         `/.netlify/functions/fetchSubjects?class=${classId}`
