@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.document.title = "Home | PAKJMS Tests Management";
+  }, []);
 
   return (
     <div className="home-wrapper">
