@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Vela Sans";
   font-style: none;
-  font-weight: 400 900;
-  src: url("/fonts/VelaSans.ttf") format("truetype");
+  font-weight: 400 800;
+  src: local("Vela Sans"), url("/fonts/VelaSans.ttf") format("truetype");
 }
 
 html {
