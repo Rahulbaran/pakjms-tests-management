@@ -64,8 +64,6 @@
       font-family: inherit;
       font-size: inherit;
       padding: var(--base-padding);
-      border: 1px solid var(--input-border);
-      border-radius: calc(var(--base-br) * 0.2);
     }
   }
 
