@@ -90,7 +90,7 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
 
   return (
     <div
-      className="test-modal-container"
+      className="modal-container test-modal-container"
       role="dialog"
       aria-hidden={modal ? "false" : "true"}
       aria-labelledby="modal_title"
@@ -136,7 +136,7 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
         </div>
       </div>
 
-      <div className="test-modal-overlay"></div>
+      <div className="modal-overlay test-modal-overlay"></div>
     </div>
   );
 }
