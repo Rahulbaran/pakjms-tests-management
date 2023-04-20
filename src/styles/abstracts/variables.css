@@ -50,8 +50,12 @@
   --loader-border-1: var(--dark-green);
   --loader-border-2: var(--light-green);
 
-  /* Test Modal */
+  /* Modal */
   --modal-close-icon: var(--lightest-green);
+
+  /* Student Form */
+  --student-form-bg: var(--lightest-green);
+  --input-border: var(--light-green);
 
   @media (prefers-color-scheme: dark) {
     --body-bg: var(--dark-green);
@@ -74,5 +78,9 @@
     /* Loader */
     --loader-border-1: var(--green);
     --loader-border-2: var(--lightest-green);
+
+    /* Student Form */
+    --student-form-bg: var(--dark-green);
+    --input-border: var(--green);
   }
 }

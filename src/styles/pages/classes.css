@@ -42,3 +42,34 @@
     padding-block: var(--base-padding);
   }
 }
+
+/* Modal */
+.student-form-wrapper {
+  z-index: 2;
+  background-color: var(--student-form-bg);
+  padding: calc(var(--base-padding) * 3);
+  border-radius: calc(var(--base-br) * 0.25);
+  inline-size: min(480px, 80vw);
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-block-end: calc(var(--base-margin) * 2);
+
+    & label {
+      line-height: calc(var(--base-lh) * 0.7);
+    }
+
+    & :where(input, select) {
+      font-family: inherit;
+      font-size: inherit;
+      padding: var(--base-padding);
+      border: 1px solid var(--input-border);
+      border-radius: calc(var(--base-br) * 0.2);
+    }
+  }
+
+  & button {
+    margin-block-start: var(--base-margin);
+  }
+}
