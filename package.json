@@ -30,8 +30,10 @@
     "start": "vite serve",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint src/**/**/*.{jsx,js} && stylelint src/**/**/*.css",
-    "lint:fix": "eslint --fix src/**/**/*.{jsx,js} && stylelint --fix src/**/**/*.css"
+    "lint": "eslint src --ext jsx,js && stylelint src --ext css",
+    "lint:fix": "eslint --fix src --ext jsx,js && stylelint --fix src --ext css",
+    "prettier:check": "prettier --check src",
+    "prettier": "prettier --write src"
   },
   "repository": {
     "type": "git",
