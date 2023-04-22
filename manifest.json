@@ -3,7 +3,7 @@
   "short_name": "pakjms-tests",
   "description": "It is an installable SPA created using React & Netlify functions with MongoDB as database",
   "start_url": "/",
-  "theme_color": "hwb(120 28% 61%)",
+  "theme_color": "#476347",
   "display": "standalone",
   "icons": [
     {
