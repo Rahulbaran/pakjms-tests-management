@@ -33,8 +33,8 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: [
-          "/**/*.{css,html,js}",
-          "/*.{ico,png,webp,gif,jpeg,avif}"
+          "**/*.{css,html,js}",
+          "**/*.{ico,png,webp,gif,jpeg,avif,svg}"
         ],
         sourcemap: true
       },
