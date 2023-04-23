@@ -7,12 +7,12 @@ const [MONGO_USER, MONGO_PASSWORD] = [
 const mongoUrl = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@pakjms-apps.zywf02i.mongodb.net/?retryWrites=true&w=majority`;
 
 export const handler = async event => {
-  const { name, classId } = event.queryStringParameters;
+  const student = JSON.parse(event.body);
   const client = new MongoClient(mongoUrl);
 
   try {
     const db = client.db("tests-management");
-    await db.collection("students").insertOne({ name, classId });
+    await db.collection("students").insertOne(student);
 
     return {
       statusCode: 200,
