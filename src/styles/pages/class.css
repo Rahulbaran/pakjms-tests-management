@@ -100,7 +100,8 @@
 /* Subjects Tabs */
 .subjects-navigation-wrapper {
   background-color: var(--subjects-navigation-bg);
-  padding-block: var(--base-padding);
+  padding-block: calc(var(--base-padding) * 2);
+  padding-inline: var(--base-padding);
   position: sticky;
   top: 0;
   z-index: 1;
