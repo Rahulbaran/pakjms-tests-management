@@ -19,6 +19,11 @@ export default function StudentModal({ modal, closeModal }) {
     return () => document.removeEventListener("keydown", close);
   }, [closeModal]);
 
+  /* Form related functions */
+  const handleInput = e => {
+    setStudent(stud => ({ ...stud, [e.target.name]: e.target.value }));
+  };
+
   return (
     <div
       className="modal-container student-modal-container"
@@ -44,14 +49,22 @@ export default function StudentModal({ modal, closeModal }) {
               name="name"
               id="name"
               placeholder="enter student name"
-              required
               ref={focused}
+              value={student.name}
+              onChange={handleInput}
+              required
             />
           </div>
 
           <div className="form-group">
             <label htmlFor="class">Class</label>
-            <select name="class" id="class" required>
+            <select
+              name="class"
+              id="class"
+              value={student.class}
+              onChange={handleInput}
+              required
+            >
               {[1, 2, 3, 4, 5, 6, 7, 8].map(ele => (
                 <option key={ele} value={ele}>
                   {ele}
