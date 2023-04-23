@@ -112,11 +112,7 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
             studentsInfo={studentsInfo}
             handleChange={handleChange}
           />
-          <TestEntryTable
-            students={studentsInfo.students}
-            // marks={marks}
-            // handleMarks={handleMarks}
-          />
+          <TestEntryTable students={studentsInfo.students} />
           <p
             className="error"
             style={{
