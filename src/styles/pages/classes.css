@@ -28,6 +28,7 @@
     font-size: calc(var(--base-fs) * 2.25);
     text-align: center;
     text-decoration: underline 0.1em solid currentcolor;
+    text-underline-offset: 0.1em;
   }
 }
 
