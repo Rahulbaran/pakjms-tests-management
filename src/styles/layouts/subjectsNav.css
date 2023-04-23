@@ -1,7 +1,7 @@
 .subjects-navigation {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--base-gap);
+  gap: calc(var(--base-gap) * 2);
   justify-content: center;
 
   & button {
