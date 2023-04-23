@@ -28,6 +28,28 @@ export default function StudentModal({ modal, closeModal }) {
     setStudent(stud => ({ ...stud, [e.target.name]: e.target.value }));
   };
 
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    const response = await (
+      await fetch("/.netlify/functions/addStudent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(student)
+      })
+    ).json();
+
+    if (response.status === 200) {
+      setMsg(message => ({ ...message, label: response.msg }));
+    } else if (response.status === 500) {
+      setMsg({ label: response.msg, error: true });
+    }
+    setStudent({ name: "", class: 1 });
+    closeModal();
+  };
+
   return (
     <div
       className="modal-container student-modal-container"
@@ -45,7 +67,7 @@ export default function StudentModal({ modal, closeModal }) {
       </button>
 
       <div className="student-form-wrapper">
-        <form className="form" autoComplete="off">
+        <form className="form" autoComplete="off" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
