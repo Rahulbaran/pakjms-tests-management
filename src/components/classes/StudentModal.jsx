@@ -1,7 +1,11 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export default function StudentModal({ modal, closeModal }) {
   const focused = useRef(null);
+  const [student, setStudent] = useState({
+    name: "",
+    class: 1
+  });
 
   useEffect(() => {
     if (modal) focused.current.focus();
