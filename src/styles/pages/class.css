@@ -76,16 +76,12 @@
   .table-input-fields {
     display: flex;
     flex-wrap: wrap;
-    gap: calc(var(--base-gap) * 2) calc(var(--base-gap) * 3);
+    gap: calc(var(--base-gap) * 3);
 
     .form-group {
       flex: 1 1 auto;
       display: flex;
       flex-direction: column;
-
-      & label {
-        line-height: calc(var(--base-lh) * 0.7);
-      }
 
       & :where(input, select) {
         max-inline-size: 200px;
