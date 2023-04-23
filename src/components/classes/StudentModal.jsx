@@ -4,7 +4,7 @@ export default function StudentModal({ modal, closeModal }) {
   const focused = useRef(null);
   const [student, setStudent] = useState({
     name: "",
-    class: 1
+    class: "1"
   });
   const [msg, setMsg] = useState({
     label: "",
