@@ -59,7 +59,7 @@
 
     & :where(input, select) {
       font-family: inherit;
-      font-size: inherit;
+      font-size: calc(var(--base-fs) * 1.1);
       padding: var(--base-padding);
     }
   }
