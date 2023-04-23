@@ -7,7 +7,7 @@ const [MONGO_USER, MONGO_PASSWORD] = [
 const mongoUrl = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@pakjms-apps.zywf02i.mongodb.net/?retryWrites=true&w=majority`;
 
 export const handler = async event => {
-  const classId = +event.queryStringParameters.classId;
+  const classId = event.queryStringParameters.classId;
   const client = new MongoClient(mongoUrl);
 
   try {
