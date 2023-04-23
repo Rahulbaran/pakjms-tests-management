@@ -6,6 +6,10 @@ export default function StudentModal({ modal, closeModal }) {
     name: "",
     class: 1
   });
+  const [msg, setMsg] = useState({
+    label: "",
+    error: false
+  });
 
   useEffect(() => {
     if (modal) focused.current.focus();
