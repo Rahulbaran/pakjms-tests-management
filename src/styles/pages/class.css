@@ -110,7 +110,7 @@
     display: none;
     margin-block: var(--base-margin) calc(var(--base-margin) * 2);
     text-align: center;
-    text-decoration: underline 0.11em solid currentcolor;
+    text-decoration: underline 0.12em solid currentcolor;
     text-underline-offset: 0.1em;
     font-size: calc(var(--base-fs) * 1.75);
   }
@@ -128,7 +128,7 @@
     gap: calc(var(--base-gap) * 3);
 
     & h2 {
-      text-decoration: underline 0.11em solid currentcolor;
+      text-decoration: underline 0.12em solid currentcolor;
       text-underline-offset: 0.1em;
       text-align: center;
       font-size: calc(var(--base-fs) * 2.25);
