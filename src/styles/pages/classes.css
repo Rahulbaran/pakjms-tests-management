@@ -54,20 +54,12 @@
   .form-group {
     display: flex;
     flex-direction: column;
-    margin-block-end: calc(var(--base-margin) * 2);
-
-    & label {
-      line-height: calc(var(--base-lh) * 0.7);
-    }
+    margin-block-end: calc(var(--base-margin) * 4);
 
     & :where(input, select) {
       font-family: inherit;
       font-size: inherit;
       padding: var(--base-padding);
     }
-  }
-
-  & button {
-    margin-block-start: var(--base-margin);
   }
 }
