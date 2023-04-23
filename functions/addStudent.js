@@ -12,7 +12,9 @@ export const handler = async event => {
 
   try {
     const db = client.db("tests-management");
-    await db.collection("students").insertOne(student);
+    await db
+      .collection("students")
+      .insertOne({ student_name: student.name, class_name: student.class });
 
     return {
       statusCode: 200,
