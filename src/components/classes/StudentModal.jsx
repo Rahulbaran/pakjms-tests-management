@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 
-export default function StudentModal({ modal, closeModal }) {
+export default function StudentModal({ modal, toggleModal }) {
   const focused = useRef(null);
   const [student, setStudent] = useState({
     name: "",
@@ -14,14 +14,6 @@ export default function StudentModal({ modal, closeModal }) {
   useEffect(() => {
     if (modal) focused.current.focus();
   }, [modal]);
-
-  useEffect(() => {
-    const close = e => {
-      if (e.key === "Escape") closeModal();
-    };
-    document.addEventListener("keydown", close);
-    return () => document.removeEventListener("keydown", close);
-  }, [closeModal]);
 
   /* Form related functions */
   const handleInput = e => {
@@ -47,7 +39,7 @@ export default function StudentModal({ modal, closeModal }) {
       setMsg({ label: response.msg, error: true });
     }
     setStudent({ name: "", class: 1 });
-    closeModal();
+    toggleModal();
   };
 
   return (
@@ -61,7 +53,7 @@ export default function StudentModal({ modal, closeModal }) {
       <button
         className="modal-close-btn"
         title="close modal"
-        onClick={closeModal}
+        onClick={toggleModal}
       >
         <span className="material-icons">close</span>
       </button>

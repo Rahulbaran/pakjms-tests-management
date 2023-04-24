@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
+/* Custom Hooks */
+import useModal from "../../hooks/useModal";
+
+/* Components */
 import StudentModal from "../../components/classes/StudentModal";
 
 export default function Classes() {
   const navigate = useNavigate();
-  const [modal, setModal] = useState(false);
+  const { modal, toggleModal } = useModal();
 
   useEffect(() => {
     window.document.title = "Classes | PAKJMS Tests Management";
   }, []);
 
-  /* Modal Functions */
-  const openModal = () => setModal(true);
-  const closeModal = () => setModal(false);
-
   return (
     <div className="classes-wrapper">
-      <StudentModal closeModal={closeModal} modal={modal} />
+      <StudentModal toggleModal={toggleModal} modal={modal} />
 
       <div className="add-student-wrapper">
         <button className="btn btn-primary" onClick={() => navigate("/")}>
@@ -24,7 +25,7 @@ export default function Classes() {
           <span>Go Back</span>
         </button>
 
-        <button className="btn btn-primary" onClick={openModal}>
+        <button className="btn btn-primary" onClick={toggleModal}>
           <span className="material-icons">add_circle</span>
           <span>Add Student</span>
         </button>
