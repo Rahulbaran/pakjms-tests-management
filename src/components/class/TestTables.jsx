@@ -6,7 +6,7 @@ import Loader from "../Loader";
 /* Utils */
 import modifyDateString from "../../utils/modifyDateString";
 
-export default function Tables({ classId, allTests, subject, openModal }) {
+export default function Tables({ classId, allTests, subject, toggleModal }) {
   const navigate = useNavigate();
 
   const tests = allTests.filter(test => test.subject === subject);
@@ -74,7 +74,7 @@ export default function Tables({ classId, allTests, subject, openModal }) {
 
         <button
           className="btn btn-primary"
-          onClick={openModal}
+          onClick={toggleModal}
           title="Add a new test"
         >
           <span className="material-icons">add_circle</span>

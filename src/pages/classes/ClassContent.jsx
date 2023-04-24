@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
 
+/* Custom Hooks */
+import useModal from "../../hooks/useModal";
+
 /* Components */
 import TestModal from "../../components/class/modal/TestModal";
 import SubjectsTabs from "../../components/class/SubjectsTabs";
 import TestTables from "../../components/class/TestTables";
 
 export default function ClassContent({ subjects, classId }) {
-  const [modal, setModal] = useState(false);
   const [subject, setSubject] = useState("Hindi");
   const [tests, setTests] = useState([]);
+
+  const { modal, toggleModal } = useModal();
 
   useEffect(() => {
     const fetchTests = async () => {
@@ -23,16 +27,13 @@ export default function ClassContent({ subjects, classId }) {
 
   const handleSubject = e => setSubject(e.target.textContent);
 
-  const openModal = () => setModal(true);
-  const closeModal = () => setModal(false);
-
   return (
     <div className="class-content-wrapper">
       <TestModal
         classId={classId}
         subjects={subjects}
         modal={modal}
-        closeModal={closeModal}
+        toggleModal={toggleModal}
       />
       <SubjectsTabs
         subjects={subjects}
@@ -43,7 +44,7 @@ export default function ClassContent({ subjects, classId }) {
         classId={classId}
         allTests={tests}
         subject={subject}
-        openModal={openModal}
+        toggleModal={toggleModal}
       />
     </div>
   );

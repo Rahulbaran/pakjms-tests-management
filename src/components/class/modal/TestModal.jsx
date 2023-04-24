@@ -7,7 +7,7 @@ import TestEntryTable from "./TestEntryTable";
 /* Utils */
 import modifyStudents from "../../../utils/modifyStudents";
 
-export default function TestModal({ classId, subjects, modal, closeModal }) {
+export default function TestModal({ classId, subjects, modal, toggleModal }) {
   const focused = useRef(null);
   const [studentsInfo, setStudentsInfo] = useState({
     subject: "Hindi",
@@ -35,14 +35,6 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
   useEffect(() => {
     if (modal) focused.current.focus();
   }, [modal]);
-
-  useEffect(() => {
-    const close = e => {
-      if (e.key === "Escape") closeModal();
-    };
-    document.addEventListener("keydown", close);
-    return () => document.removeEventListener("keydown", close);
-  }, [closeModal]);
 
   /* Handle Form Change */
   function handleChange(e, field) {
@@ -72,7 +64,7 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
           body: JSON.stringify({ ...studentsInfo, marks })
         }
       );
-      closeModal();
+      toggleModal();
       Array.from(document.getElementsByClassName("test-marks")).forEach(
         mark => (mark.value = "")
       );
@@ -99,7 +91,7 @@ export default function TestModal({ classId, subjects, modal, closeModal }) {
       <button
         className="modal-close-btn"
         title="close modal"
-        onClick={closeModal}
+        onClick={toggleModal}
       >
         <span className="material-icons">close</span>
       </button>
