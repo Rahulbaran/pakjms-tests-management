@@ -11,7 +11,6 @@ import TestTables from "../../components/class/TestTables";
 export default function ClassContent({ subjects, classId }) {
   const [subject, setSubject] = useState("Hindi");
   const [tests, setTests] = useState([]);
-
   const { modal, toggleModal } = useModal();
 
   useEffect(() => {
