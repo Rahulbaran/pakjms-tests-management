@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 /* Custom Hooks */
 import useModal from "../../hooks/useModal";
+import usePageTitle from "../../hooks/usePageTitle";
 
 /* Components */
 import StudentModal from "../../components/classes/StudentModal";
@@ -10,10 +10,7 @@ import StudentModal from "../../components/classes/StudentModal";
 export default function Classes() {
   const navigate = useNavigate();
   const { modal, toggleModal } = useModal();
-
-  useEffect(() => {
-    window.document.title = "Classes | PAKJMS Tests Management";
-  }, []);
+  usePageTitle("Classes | PAKJMS Tests Management");
 
   return (
     <div className="classes-wrapper">

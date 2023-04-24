@@ -1,9 +1,7 @@
-import { useEffect } from "react";
+import usePageTitle from "../hooks/usePageTitle";
 
 export default function NotFound() {
-  useEffect(() => {
-    window.document.title = "Not Found";
-  }, []);
+  usePageTitle("Not Found");
 
   return (
     <div className="notfound-wrapper">

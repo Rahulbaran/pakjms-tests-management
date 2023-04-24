@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+/* Custom Hooks */
+import usePageTitle from "../../hooks/usePageTitle";
+
 /* Components */
 import Loader from "../../components/Loader";
 import ClassContent from "./ClassContent";
@@ -10,9 +13,7 @@ export default function Class() {
   const [subjects, setSubjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    window.document.title = `Class - ${classId} | PAKJMS Tests Management`;
-  }, [classId]);
+  usePageTitle(`Class - ${classId} | PAKJMS Tests Management`);
 
   useEffect(() => {
     const fetchClasses = async () => {

@@ -1,12 +1,11 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+/* Custom Hooks */
+import usePageTitle from "../../hooks/usePageTitle";
 
 export default function Home() {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    window.document.title = "Home | PAKJMS Tests Management";
-  }, []);
+  usePageTitle("Home | PAKJMS Tests Management");
 
   return (
     <div className="home-wrapper">
