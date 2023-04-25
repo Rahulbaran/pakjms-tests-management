@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import useModal from "../../hooks/useModal";
 
 /* Components */
-import TestModal from "../../components/class/modal/TestModal";
-import SubjectsTabs from "../../components/class/SubjectsTabs";
-import TestTables from "../../components/class/TestTables";
+import TestModal from "./modal/TestModal";
+import SubjectsTabs from "./content/SubjectsTabs";
+import TestTables from "./content/TestTables";
 
 export default function ClassContent({ subjects, classId }) {
   const [subject, setSubject] = useState("Hindi");

@@ -8,7 +8,7 @@ import {
 /* pages */
 import Home from "./pages/home/Home";
 import Classes from "./pages/classes/Classes";
-import Class from "./pages/classes/Class";
+import Class from "./pages/class/Class";
 import NotFound from "./pages/NotFound";
 
 /* layouts */

@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
 /* Components */
-import Loader from "../Loader";
+import Loader from "../../../components/Loader";
 
 /* Utils */
-import modifyDateString from "../../utils/modifyDateString";
+import modifyDateString from "../../../utils/modifyDateString";
 
 export default function Tables({ classId, allTests, subject, toggleModal }) {
   const navigate = useNavigate();

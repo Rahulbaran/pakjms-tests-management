@@ -1,5 +1,5 @@
 /* Components */
-import Loader from "../../Loader";
+import Loader from "../../../components/Loader";
 
 export default function TestTable({ students }) {
   return (

@@ -5,7 +5,7 @@ import useModal from "../../hooks/useModal";
 import usePageTitle from "../../hooks/usePageTitle";
 
 /* Components */
-import StudentModal from "../../components/classes/StudentModal";
+import StudentModal from "./StudentModal";
 
 export default function Classes() {
   const navigate = useNavigate();
