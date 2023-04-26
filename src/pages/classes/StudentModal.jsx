@@ -1,14 +1,15 @@
 import { useRef, useEffect, useState } from "react";
 
-export default function StudentModal({ modal, toggleModal }) {
+export default function StudentModal({
+  modal,
+  toggleModal,
+  setMsg,
+  toggleState
+}) {
   const focused = useRef(null);
   const [student, setStudent] = useState({
     name: "",
     class: "1"
-  });
-  const [msg, setMsg] = useState({
-    label: "",
-    error: false
   });
 
   useEffect(() => {
@@ -39,6 +40,7 @@ export default function StudentModal({ modal, toggleModal }) {
       setMsg({ label: response.msg, error: true });
     }
     setStudent({ name: "", class: 1 });
+    toggleState();
     toggleModal();
   };
 
