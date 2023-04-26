@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 /* Custom Hooks */
@@ -19,6 +19,10 @@ export default function Classes() {
   const { modal, toggleModal } = useModal();
   const { state, toggleState } = useToggle(false);
   usePageTitle("Classes | PAKJMS Tests Management");
+
+  useEffect(() => {
+    if (state) setTimeout(() => toggleState(), 5000);
+  }, [state, toggleState]);
 
   return (
     <div className="classes-wrapper">
