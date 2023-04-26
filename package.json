@@ -16,7 +16,7 @@
     "pakjms-tests-management",
     "pakjms-tests"
   ],
-  "description": "It is a Single Page Application which has been created using React and Netlify functions with MongoDB as database",
+  "description": "It is an installable SPA created using React & Netlify functions with MongoDB as database",
   "prettier": {
     "arrowParens": "avoid",
     "singleQuote": false,
@@ -42,7 +42,7 @@
   "bugs": {
     "url": "https://github.com/Rahulbaran/pakjms-tests-management/issues"
   },
-  "homepage": "https://github.com/Rahulbaran/pakjms-tests-management#readme",
+  "homepage": "https://github.com/Rahulbaran/pakjms-tests-management",
   "dependencies": {
     "dotenv": "^16.0.3",
     "mongodb": "^5.2.0",
