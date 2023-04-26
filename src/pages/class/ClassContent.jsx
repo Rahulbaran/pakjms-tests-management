@@ -2,16 +2,24 @@ import { useState, useEffect } from "react";
 
 /* Custom Hooks */
 import useModal from "../../hooks/useModal";
+import useToggle from "../../hooks/useToggle";
 
 /* Components */
 import TestModal from "./modal/TestModal";
 import SubjectsTabs from "./content/SubjectsTabs";
 import TestTables from "./content/TestTables";
+import Message from "../../components/Message";
 
 export default function ClassContent({ subjects, classId }) {
   const [subject, setSubject] = useState("Hindi");
   const [tests, setTests] = useState([]);
+  const [msg, setMsg] = useState({
+    label: "",
+    error: false
+  });
+
   const { modal, toggleModal } = useModal();
+  const { state, toggleState } = useToggle(false);
 
   useEffect(() => {
     const fetchTests = async () => {
@@ -26,6 +34,10 @@ export default function ClassContent({ subjects, classId }) {
 
   const handleSubject = e => setSubject(e.target.textContent);
 
+  useEffect(() => {
+    if (state) setTimeout(() => toggleState(), 5000);
+  }, [state, toggleState]);
+
   return (
     <div className="class-content-wrapper">
       <TestModal
@@ -33,7 +45,14 @@ export default function ClassContent({ subjects, classId }) {
         subjects={subjects}
         modal={modal}
         toggleModal={toggleModal}
+        toggleState={toggleState}
+        setMsg={setMsg}
       />
+
+      {msg.label.length > 0 && (
+        <Message msg={msg} state={state} toggleState={toggleState} />
+      )}
+
       <SubjectsTabs
         subjects={subjects}
         subject={subject}

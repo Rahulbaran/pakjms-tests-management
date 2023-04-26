@@ -7,7 +7,14 @@ import TestEntryTable from "./TestEntryTable";
 /* Utils */
 import modifyStudents from "../../../utils/modifyStudents";
 
-export default function TestModal({ classId, subjects, modal, toggleModal }) {
+export default function TestModal({
+  classId,
+  subjects,
+  modal,
+  toggleModal,
+  toggleState,
+  setMsg
+}) {
   const focused = useRef(null);
   const [studentsInfo, setStudentsInfo] = useState({
     subject: "Hindi",
@@ -16,7 +23,6 @@ export default function TestModal({ classId, subjects, modal, toggleModal }) {
     students: []
   });
   const [error, setError] = useState("");
-  const [msg, setMsg] = useState("");
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -36,7 +42,7 @@ export default function TestModal({ classId, subjects, modal, toggleModal }) {
     if (modal) focused.current.focus();
   }, [modal]);
 
-  /* Handle Form Change */
+  /* Functions for handling test form */
   function handleChange(e, field) {
     setStudentsInfo(data => ({ ...data, [field]: e.target.value }));
   }
@@ -47,37 +53,39 @@ export default function TestModal({ classId, subjects, modal, toggleModal }) {
       setError("Either 'Date' or 'Full Marks' is missing");
       return undefined;
     }
-    setError("");
 
+    setError("");
     const marks = Array.from(document.getElementsByClassName("test-marks")).map(
       ele => ele.value
     );
 
-    try {
-      const response = await fetch(
-        `/.netlify/functions/addTest?classId=${classId}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ ...studentsInfo, marks })
-        }
-      );
-      toggleModal();
-      Array.from(document.getElementsByClassName("test-marks")).forEach(
-        mark => (mark.value = "")
-      );
-      setStudentsInfo(info => ({
-        ...info,
-        subject: "Hindi",
-        date: "",
-        fm: ""
-      }));
-      setMsg(await response.json());
-    } catch (error) {
-      setMsg(error);
+    const response = await (
+      await fetch(`/.netlify/functions/addTest?classId=${classId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ ...studentsInfo, marks })
+      })
+    ).json();
+
+    Array.from(document.getElementsByClassName("test-marks")).forEach(
+      mark => (mark.value = "")
+    );
+    setStudentsInfo(info => ({
+      ...info,
+      subject: "Hindi",
+      date: "",
+      fm: ""
+    }));
+
+    if (response.status === 200) {
+      setMsg(message => ({ ...message, label: response.msg }));
+    } else if (response.status === 500) {
+      setMsg({ label: response.msg, error: true });
     }
+    toggleModal();
+    toggleState();
   }
 
   return (
