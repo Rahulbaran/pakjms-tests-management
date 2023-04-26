@@ -24,7 +24,7 @@ export const handler = async event => {
     return {
       statusCode: 500,
       body: JSON.stringify({
-        msg: "Student has not been successfully added",
+        msg: "Student has not been added",
         status: 500
       })
     };
