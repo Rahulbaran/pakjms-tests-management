@@ -1,0 +1,51 @@
+.msg-wrapper {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: grid;
+  justify-content: center;
+  padding: calc(var(--base-padding) * 2) calc(var(--base-padding) * 3);
+  background-color: hwb(260 75% 0%);
+  border-radius: calc(var(--base-br) * 0.2);
+
+  .msg-container {
+    display: flex;
+    gap: calc(var(--base-gap) * 4);
+    align-items: center;
+  }
+
+  & p {
+    color: hwb(260 0% 0%);
+    font-size: calc(var(--base-fs) * 1.15);
+    font-weight: var(--fw-medium);
+  }
+
+  & button {
+    background-color: transparent;
+    border: none;
+
+    & > span {
+      font-size: calc(var(--base-fs) * 1.6);
+      font-weight: var(--fw-medium);
+      color: hwb(260 20% 0%);
+      line-height: calc(var(--base-lh) * 0.75);
+    }
+
+    &:hover {
+      opacity: 0.75;
+      cursor: pointer;
+    }
+  }
+}
+
+.error-msg-wrapper {
+  background-color: hwb(0 85% 0%);
+
+  & p {
+    color: hwb(350 0% 0%);
+  }
+
+  & button > span {
+    color: hwb(350 10% 0%);
+  }
+}
