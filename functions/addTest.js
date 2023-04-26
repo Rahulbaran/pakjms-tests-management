@@ -17,12 +17,15 @@ export const handler = async event => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify("Test has been successfully added")
+      body: JSON.stringify({
+        msg: "Test has been successfully created",
+        status: 200
+      })
     };
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify(error)
+      body: JSON.stringify({ msg: "Test has not been created", status: 500 })
     };
   } finally {
     await client.close();
