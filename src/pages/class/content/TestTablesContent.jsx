@@ -42,9 +42,9 @@ export default function TestTablesContent({
         <div className="modal">
           <p>Do you want to delete the table?</p>
           <div className="buttons">
-            <button className="btn btn-primary">Delete</button>
+            <button className="btn btn-primary">👍 Yes</button>
             <button className="btn btn-secondary" onClick={handleModal}>
-              Cancel
+              🚫 No
             </button>
           </div>
         </div>
