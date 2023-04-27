@@ -23,7 +23,6 @@ export default function StudentModal({
 
   const handleSubmit = async e => {
     e.preventDefault();
-
     const response = await (
       await fetch("/.netlify/functions/addStudent", {
         method: "POST",
@@ -96,7 +95,7 @@ export default function StudentModal({
           <button className="btn btn-primary">Create</button>
         </form>
       </div>
-      <div className="modal-overlay test-modal-overlay"></div>
+      <div className="modal-overlay"></div>
     </div>
   );
 }
