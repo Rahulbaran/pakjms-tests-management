@@ -7,7 +7,7 @@ import useToggle from "../../hooks/useToggle";
 /* Components */
 import TestModal from "./modal/TestModal";
 import SubjectsTabs from "./content/SubjectsTabs";
-import TestTables from "./content/TestTables";
+import TestTables from "./content/TestTablesContent";
 import Message from "../../components/Message";
 
 export default function ClassContent({ subjects, classId }) {
@@ -20,6 +20,9 @@ export default function ClassContent({ subjects, classId }) {
 
   const { modal, toggleModal } = useModal();
   const { state, toggleState } = useToggle(false);
+  useEffect(() => {
+    if (state) setTimeout(() => toggleState(), 5000);
+  }, [state, toggleState]);
 
   useEffect(() => {
     const fetchTests = async () => {
@@ -33,10 +36,6 @@ export default function ClassContent({ subjects, classId }) {
   }, [classId]);
 
   const handleSubject = e => setSubject(e.target.textContent);
-
-  useEffect(() => {
-    if (state) setTimeout(() => toggleState(), 5000);
-  }, [state, toggleState]);
 
   return (
     <div className="class-content-wrapper">
