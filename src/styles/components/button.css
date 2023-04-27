@@ -1,6 +1,8 @@
 .btn {
   --primary-btn-bg: var(--dark-green);
   --primary-btn-text: var(--lightest-green);
+  --secondary-btn-bg: var(--light-green);
+  --secondary-btn-text: var(--dark-green);
 
   background-color: var(--btn-bg);
   border: 0;
@@ -45,6 +47,8 @@
   @media (prefers-color-scheme: dark) {
     --primary-btn-bg: var(--light-green);
     --primary-btn-text: var(--dark-green);
+    --secondary-btn-bg: var(--green);
+    --secondary-btn-text: var(--lightest-green);
   }
 }
 
@@ -56,4 +60,9 @@
 .btn-primary {
   --btn-bg: var(--primary-btn-bg);
   --btn-text-color: var(--primary-btn-text);
+}
+
+.btn-secondary {
+  --btn-bg: var(--secondary-btn-bg);
+  --btn-text-color: var(--secondary-btn-text);
 }
