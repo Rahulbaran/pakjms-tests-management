@@ -5,7 +5,7 @@ import useModal from "../../hooks/useModal";
 import useToggle from "../../hooks/useToggle";
 
 /* Components */
-import TestModal from "./modal/TestModal";
+import TestModal from "./testModal/TestModal";
 import SubjectsTabs from "./content/SubjectsTabs";
 import TestTables from "./content/TestTablesContent";
 import Message from "../../components/Message";
