@@ -51,6 +51,7 @@
   --loader-border-2: var(--light-green);
 
   /* Modal */
+  --modal-bg: var(--lightest-green);
   --modal-close-icon: var(--lightest-green);
 
   /* Student Form */
@@ -77,6 +78,9 @@
     /* Loader */
     --loader-border-1: var(--green);
     --loader-border-2: var(--lightest-green);
+
+    /* Modal */
+    --modal-bg: var(--dark-green);
 
     /* Student Form */
     --student-form-bg: var(--dark-green);

@@ -45,6 +45,28 @@
   }
 }
 
+/* Test Table Delete Modal */
+.test-delete-modal-container {
+  .modal {
+    z-index: 2;
+    background-color: var(--modal-bg);
+    padding: calc(var(--base-padding) * 2.5) calc(var(--base-padding) * 3);
+    border-radius: calc(var(--base-br) * 0.2);
+
+    & p {
+      font-size: calc(var(--base-fs) * 1.2);
+      font-weight: var(--fw-medium);
+    }
+
+    .buttons {
+      margin-block-start: calc(var(--base-margin) * 4);
+      display: flex;
+      justify-content: flex-end;
+      gap: calc(var(--base-gap) * 2);
+    }
+  }
+}
+
 /* Test Modal */
 .test-modal {
   position: relative;
