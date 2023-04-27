@@ -1,10 +1,10 @@
 /* Utils */
 import modifyDateString from "../../../utils/modifyDateString";
 
-export default function TestTables({ tests }) {
+export default function TestTables({ tests, handleClick }) {
   if (tests.length > 0) {
     return tests.map(test => (
-      <div className="table-container" key={test._id} id={test._id}>
+      <div className="table-container" key={test._id}>
         <div className="table-info">
           <p>Test Date - {modifyDateString(test.date)}</p>
           <div className="chart-container">
@@ -34,7 +34,11 @@ export default function TestTables({ tests }) {
           </tbody>
         </table>
 
-        <button className="btn btn-primary table-delete-btn">
+        <button
+          className="btn btn-primary table-delete-btn"
+          id={test._id}
+          onClick={handleClick}
+        >
           <span className="material-icons">delete</span>
           <span>Delete</span>
         </button>

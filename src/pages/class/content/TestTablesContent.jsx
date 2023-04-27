@@ -1,4 +1,8 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+/* Hooks */
+import useModal from "../../../hooks/useModal";
 
 /* Components */
 import Loader from "../../../components/Loader";
@@ -11,10 +15,42 @@ export default function TestTablesContent({
   toggleModal
 }) {
   const navigate = useNavigate();
-  const tests = allTests.filter(test => test.subject === subject);
+  const [tests, setTests] = useState([]);
+  const [testId, setTestId] = useState("");
+
+  useEffect(() => {
+    setTests(allTests.filter(test => test.subject === subject));
+  }, [subject, allTests]);
+
+  const { modal, toggleModal: handleModal } = useModal();
+
+  /* Function to handle test table deletion  */
+  const handleClick = e => {
+    handleModal();
+    setTestId(e.currentTarget.id);
+  };
 
   return (
     <main className="tables-wrapper">
+      <div
+        className="modal-container test-delete-modal-container"
+        role="dialog"
+        aria-hidden={modal ? "false" : "true"}
+        aria-labelledby="modal_title"
+        style={{ display: modal ? "grid" : "none" }}
+      >
+        <div className="modal">
+          <p>Do you want to delete the table?</p>
+          <div className="buttons">
+            <button className="btn btn-primary">Delete</button>
+            <button className="btn btn-secondary" onClick={handleModal}>
+              Cancel
+            </button>
+          </div>
+        </div>
+        <div className="modal-overlay test-delete-overlay"></div>
+      </div>
+
       <div className="page-info">
         <button
           className="btn btn-primary"
@@ -23,9 +59,7 @@ export default function TestTablesContent({
         >
           <span className="material-icons">refresh</span>
         </button>
-
         <h2>Class - {classId}</h2>
-
         <button
           className="btn btn-primary"
           onClick={toggleModal}
@@ -37,7 +71,11 @@ export default function TestTablesContent({
       </div>
 
       <div className="tables">
-        {allTests.length === 0 ? <Loader /> : <TestTables tests={tests} />}
+        {allTests.length === 0 ? (
+          <Loader />
+        ) : (
+          <TestTables tests={tests} handleClick={handleClick} />
+        )}
       </div>
     </main>
   );
