@@ -28,7 +28,7 @@ export default function TestTables({ tests, handleClick }) {
               <tr key={index}>
                 <td>{index + 1}.</td>
                 <td>{student}</td>
-                <td>{test.marks[index]}</td>
+                <td>{test.marks[index] || "Ab"}</td>
               </tr>
             ))}
           </tbody>
