@@ -24,7 +24,6 @@ export default function Class() {
       setSubjects(data.subjects);
       setLoading(false);
     };
-
     fetchClasses();
   }, [classId]);
 
