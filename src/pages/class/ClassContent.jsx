@@ -21,7 +21,9 @@ export default function ClassContent({ subjects, classId }) {
   const { modal, toggleModal } = useModal();
   const { state, toggleState } = useToggle(false);
   useEffect(() => {
-    if (state) setTimeout(() => toggleState(), 5000);
+    let timeoutId;
+    if (state) timeoutId = setTimeout(() => toggleState(), 5000);
+    clearTimeout(timeoutId);
   }, [state, toggleState]);
 
   useEffect(() => {

@@ -21,7 +21,9 @@ export default function Classes() {
   usePageTitle("Classes | PAKJMS Tests Management");
 
   useEffect(() => {
-    if (state) setTimeout(() => toggleState(), 5000);
+    let timeoutId;
+    if (state) timeoutId = setTimeout(() => toggleState(), 5000);
+    clearTimeout(timeoutId);
   }, [state, toggleState]);
 
   return (
