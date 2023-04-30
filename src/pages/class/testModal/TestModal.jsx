@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 /* Components */
 import TestTableInfo from "./TestTableInfo";
@@ -15,6 +16,7 @@ export default function TestModal({
   toggleState,
   setMsg
 }) {
+  const navigate = useNavigate();
   const focused = useRef(null);
   const [studentsInfo, setStudentsInfo] = useState({
     subject: "Hindi",
@@ -53,7 +55,6 @@ export default function TestModal({
       setError("Either 'Date' or 'Full Marks' is missing");
       return undefined;
     }
-
     setError("");
     const marks = Array.from(document.getElementsByClassName("test-marks")).map(
       ele => ele.value
@@ -86,6 +87,7 @@ export default function TestModal({
     }
     toggleModal();
     toggleState();
+    setTimeout(() => navigate(0), 1000);
   }
 
   return (
