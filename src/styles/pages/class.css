@@ -6,7 +6,7 @@
   flex-direction: column;
   gap: calc(var(--base-gap) * 4);
   align-items: center;
-  inline-size: min(90vw, 640px);
+  inline-size: min(92vw, 640px);
   max-block-size: 30em;
   overflow-y: auto;
   padding: calc(var(--base-padding) * 3);
