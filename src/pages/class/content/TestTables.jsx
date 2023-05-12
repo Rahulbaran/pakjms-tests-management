@@ -20,7 +20,12 @@ export default function TestTables({ tests, handleClick }) {
             <tr>
               <th>SL. No.</th>
               <th>Students</th>
-              <th>Marks ({test.fm})</th>
+              <th>
+                <span>Marks ({test.fm})</span>
+                <button>
+                  <span className="material-icons">swap_vert</span>
+                </button>
+              </th>
             </tr>
           </thead>
           <tbody>
